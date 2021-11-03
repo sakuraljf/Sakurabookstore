@@ -1,0 +1,56 @@
+@charset "UTF-8";
+body{
+	background-color:rgb(18,173,169);
+}
+#mz{
+	display:none;
+}
+#main{
+	width:30%;
+	height:90%;
+	background-color:white;
+	position:fixed;
+	bottom:0px;
+	right:0px;
+	
+}
+.txt{
+	display:inline-block;
+	width:130px;
+	height:50px;
+	font-size:20px;
+	color:silver;
+}
+.txts{
+	display:inline-block;
+	width:230px;
+	height:35px;
+	font-size:20px;
+	color:silver;
+}
+
+#btn{
+	display:inline-block;
+	width:280px;
+	height:40px;
+	background-color:rgb(18,173,169);
+	color:white;
+	border:1px solid rgb(18,173,169);
+	margin-top:20px;
+	margin-left:55px;
+}
+
+#jiange{
+	margin-top:80px;
+}
+
+#tu{
+	position:fixed;
+	top:60px;
+	
+}
+
+img{
+	width:850px;
+	height:530px;
+}

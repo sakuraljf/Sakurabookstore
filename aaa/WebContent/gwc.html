@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" >
+<title>L$J的小书屋</title>
+<link type="text/css" rel="stylesheet" href="gw.css">
+</head>
+<body>
+<div id="mz"></div>
+<div  id="ljf">
+</div>
+<span>总计</span><span id="total"></span>
+<div>
+<button onclick="zhifu()" id="zf">支付</button>
+</div>
+<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script>
+$(function(){
+	let hhh=location.hash.replace("#","");
+	var param=$("#mz").text();
+	if(hhh=="")
+		{
+		location.href="indexljf.html";
+		return;
+		}
+	
+	$.post("books",{
+		op:"getBooksgwc",
+		gnames:param
+	},
+	function(data)
+	{
+	
+		let str='';
+		let total=0;
+		for(let i=0;i<data.length;i++)
+			{
+ 			str+='<div class="box">'+' <img src="'+data[i].pic+'" title="图书" width="194px" height="230px"/>'+'<span class="ljf" >'+data[i].gname+'</span>'+'<span class="money">'+'￥    '+data[i].price+'</span>'+'<button onclick="add('+data[i].gno+','+data[i].num+')" class="Add">'+'+'+'</button>'+'<span class="shu">'+data[i].num+'</span>'+'<button onclick="sub('+data[i].gno+','+data[i].num+')" class="Sub">'+'-'+'</button>'+'</span>'+'<button onclick="del('+data[i].gno+')" class="Del">'+'Χ'+'</button> '+'</div>';
+		    total+=data[i].num*data[i].price;
+			}
+		$("#search_item").html(str);
+		$("#total").html(total);
+		console.log(total,"aaa");
+		$("#ljf").html(str);
+	},"json");
+});
+
+function add(gno,shu)
+{
+	
+	let ljf=gno;
+	let dqq=shu;
+	$(function(){
+	 $.post("books",{
+     	op:'add',
+     	gno:ljf,
+     	shu:shu
+     },function(data){
+     	if(data==1){
+     		location.reload([true]);
+     	   
+     	}else{
+     	   alert("失败");
+     	}
+     },"text");
+	})
+}
+
+function sub(gno,shu)
+{
+	if(shu>1)
+		{
+	let ljf=gno;
+	let dqq=shu;
+	$(function(){
+	 $.post("books",{
+     	op:'sub',
+     	gno:ljf,
+     	shu:shu
+     },function(data){
+     	if(data==1){
+     		location.reload([true]);
+     	   
+     	}else{
+     	   alert("失败");
+     	}
+     },"text");
+	})
+		}
+}	
+
+function del(del)
+{
+	let ljf=del;
+	$(function(){
+	 $.post("books",{
+     	op:'del',
+     	gno:ljf
+     },function(data){
+     	if(data==1){
+     		location.reload([true]);
+     	   
+     	}else{
+     	   alert("删除失败");
+     	}
+     },"text");
+	})
+}
+
+</script>
+<script>
+
+var param=$.cookie("name");
+$("#mz").html(param);
+
+</script>
+<script>
+function zhifu()
+{ 
+	var a=$("#total").text();
+	var flag = confirm("总订单为"+a+"元,"+"请进行扫码支付");
+	if (flag == true) {
+		location.href="q.html";
+		} else {
+			
+		}
+
+	
+}
+</script>
+</body>
+</html>

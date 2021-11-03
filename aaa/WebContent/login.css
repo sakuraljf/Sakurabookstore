@@ -1,0 +1,74 @@
+body{
+	background-color:rgb(18,173,169);
+}
+
+#login{
+	width:30%;
+	height:90%;
+	background-color:white;
+	position:fixed;
+	bottom:0px;
+	right:0px;
+}
+#title{
+	position:fixed;
+	left:40%;
+	top:-20px;
+}
+
+#yanzheng{
+	height:35px;
+	width:250px;
+	margin-left:20px;
+}
+
+#yanzhengtxt{
+	display:table-cell;
+	width:70px;
+	font-size:32px;
+	margin-left:10px;
+	vertical-align:bottom;
+}
+
+span {
+	display:inline-block;
+	width:94px;
+	height:35px;
+	margin-bottom:30px;
+	font-size:20px;
+	color:silver;
+	text-align:right;
+	
+}
+input{
+	height:35px;
+	width:250px;
+	margin-left:20px;
+}
+
+.denglu{
+	margin-top:10px;
+	width:80%;
+	height:50px;
+	background-color:rgb(18,173,169);
+	border:1px white solid;
+	color:white;
+	
+}
+#button{
+	text-align:center;
+	margin-top:30px;
+}
+img{
+	width:850px;
+	height:530px;
+}
+#tu{
+	position:fixed;
+	top:60px;
+	
+}
+#titles{
+	text-align:center;
+	color:rgb(18,173,169);
+}

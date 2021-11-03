@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Y$L的小书屋</title>
+<meta name="keywords" content="文学，小说，外国名著应有尽有" />
+<meta name="description" content="各种书籍，应有尽有" />
+<link type="text/css" rel="stylesheet" href="detail.css">
+
+</head>
+<body>
+<div id="mz"></div>
+<div id="m1">
+<img id="pic" width="200px" height="250px" src=""><br/>
+</div>
+<div id="m2">
+<span id="gname"></span><br><br>
+<span id="intro"></span><br><br>
+<span id="author"></span><span id="authors">著  </span><span id="publishs">出版社:</span><span id="publish"></span>
+<div id="jiage">
+<span id="tuijian">推荐指数:  <img src="image/deng.PNG" width="80px" height="20px" id="tuijians"></span>
+<span id="prices">￥</span>
+<span id="price"></span>
+<span id="car"><img src="image/car.PNG" width="85px" height="30px" onclick="add()"></span>
+</div>
+</div>
+<div id="m3">
+<img id="pics" width="900px" height="5200px" src=""><br/>
+</div>
+<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+//网页一加载，就先根据hash值，来找到hash数据
+$(function(){
+	
+	let gno=location.hash.replace("#","");
+	if(gno=="")
+		{
+		location.href="index.html";
+		return;
+		}
+	
+	$.post("books",{
+		op:'getBookdetail',
+		gno:gno
+	},function(data)
+	{
+		if(data==-1)
+			{
+			location.href="indexljf.html";
+			}else if(data==0){
+				alert("对不起，找不到商品");
+				location.href="indexljf.html";
+			}else{
+				$("#gname").html(data[0].gname);
+				$("#price").html(data[0].price);
+				$("#intro").html(data[0].intro);
+				$("#author").html(data[0].author);
+				$("#publish").html(data[0].publish);
+				$("#pic").attr("src","image/book/"+data[0].pic);
+				$("#pics").attr("src","image/book/"+data[0].pics);
+			}
+	},"json");
+	
+})
+
+function add()
+{
+	location.reload([true]);
+	let gno=location.hash.replace("#","");
+	var gname=$("#gname").text();
+	var pic=$("#pic").attr("src");
+	var price=$("#price").text();
+	var param=$("#mz").text();
+	  $.post("books",{
+      	op:'gwc',
+      	gno:gno,
+      	gname:gname,
+      	pic:pic,
+      	price:price,
+      	gnames:param
+      },function(data){
+      	if(data==1){
+      	   alert("加入购物车成功");
+      	}else{
+      	   alert("加入购物车失败");
+      	}
+      },"text");
+	alert("加入购物车成功");
+}
+
+</script>
+<script>
+var param=$.cookie("name");
+$("#mz").html(param);
+</script>
+</body>
+</html>

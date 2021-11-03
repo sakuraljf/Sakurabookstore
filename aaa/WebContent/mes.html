@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>个人信息</title>
+<link type="text/css" rel="stylesheet" href="mes.css">
+
+</head>
+<body>
+<div id="tu"><img src="images/shu.jpeg"></div>
+<div id="mz"></div>
+<div id="main">
+<div id="jiange"></div>
+<span class="txt">用户名：</span><input type="text" class="txts" name="uname" id="uname"/><br />
+<span class="txt">手机号：</span><input type="tel" class="txts" name="tel" id="tel"/><br />
+<span class="txt">邮箱：</span><input type="text" class="txts" name="eamil" id="email"/><br />
+ <input type="button" id="btn" value="修改" onclick="reg()"/>
+</div>
+<script src="js/jquery-3.4.1.min.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script type="text/javascript">
+var param=$.cookie("name");
+$("#mz").html(param);
+$(function(){
+	
+	var names=$("#mz").html();
+	
+	 $.post("member",{
+	      	op:'getmes',
+	        name:names
+	      },function(data){
+	    	  eval("var a ="+data);
+	    	 
+	      	if(data!=null){
+	      		$("#uname").val(a[0].nickname)
+				$("#pwd").val(a[0].pwd);
+				$("#tel").val(a[0].tel);
+				$("#email").val(a[0].email);
+				
+	      	}else{
+	      	   alert("显示失败");
+	      	}
+	      },"text");
+})
+</script>
+
+<script>
+function reg()
+{
+	$(function(){
+	var name=$("#uname").val();
+	var pwd=$("#pwd").val();
+	var tel=$("#tel").val();
+	var email=$("#email").val();
+	$(function()
+			{
+		 $.post("member",{
+        	op:'gx',
+        	uname:name,
+        	pwd:pwd,
+        	tel:tel,
+        	email:email
+        },function(data){
+        	if(data==1){
+        	   alert("修改成功");
+        	 
+        	}else{
+        	   alert("修改失败");
+        	}
+        },"text");
+			})
+	})
+}
+
+
+
+</script>
+</body>
+</html>

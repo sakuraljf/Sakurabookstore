@@ -1,0 +1,67 @@
+@charset "UTF-8";
+.box{
+	
+	position:relative;
+	width:900px;
+	height:232px;
+	border:1px orange solid;
+}
+.money{
+	position:absolute;
+	font-size:25px;
+	color:red;
+	top:180px;
+	left:224px;
+	
+}
+.ljf{
+	position:absolute;
+	font-weight:900;
+	font-size:25px;
+	top:20px;
+	left:224px;
+}
+
+.Add{
+	position:absolute;
+	right:100px;
+	top:200px;
+	height:23px;
+	width:23px;
+}
+.Sub{
+	position:absolute;
+	height:23px;
+	width:23px;
+	right:40px;
+	top:200px;
+}
+.shu{
+	position:absolute;
+	right:75px;
+	top:200px;
+}
+
+.Del{
+	position:absolute;
+	top:0px;
+	right:0px;
+	background-color:red;
+	border:1px solid red;
+}
+
+#mz{
+	
+	display:none;
+}
+
+#zf{
+	display:inline-block;
+	margin-top:20px;
+	margin-left:840px;
+	width:60px;
+	height:35px;
+	background-color:rgb(18,173,169);
+	border:1px rgb(18,173,169) solid;
+	color:white;
+}

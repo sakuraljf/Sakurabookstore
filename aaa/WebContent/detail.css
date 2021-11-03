@@ -1,0 +1,88 @@
+@charset "UTF-8";
+#m1{
+	position:absolute;
+	top:60px;
+	left:60px;
+	width:200px;
+	height:250px;
+	
+	
+}
+#m2{
+	position:absolute;
+	top:50px;
+	left:265px;
+	width:900px;
+	height:320px;
+	
+}
+#m3{
+	position:absolute;
+	top:370px;
+	left:245px;
+	width:900px;
+	height:1500px;
+}
+
+#intro{
+	display:inline-block;
+	font-size:22px;
+	width:900px;
+	height:90px;
+}
+#gname{
+	font-size:25px;
+	font-weight:900;
+}
+#author{
+	color:rgb(100,180,235);
+}
+#authors{
+	color:rgb(100,180,235);
+}
+#publishs{
+	margin-left:30px;
+	margin-right:10px;
+	
+}
+#publish{
+	color:rgb(100,180,235);
+}
+#jiage{
+	width:900px;
+	height:80px;
+	background-color:rgb(252,250,247);
+	position:relative;
+}
+#price{
+	font-size:25px;
+	color:red;
+	position:absolute;
+	left:25px;
+	bottom:0px;
+}
+#prices
+{
+	font-size:25px;
+	color:red;
+	position:absolute;
+	left:0px;
+	bottom:0px;
+}
+#car{
+	position:absolute;
+	left:200px;
+	bottom:0px;
+}
+#tuijian{
+	color:rgb(18,173,169);
+	position:absolute;
+	top:10px;
+	left:0px;
+}
+#tuijians{
+	vertical-align:bottom;
+}
+#mz{
+	display:none;
+}

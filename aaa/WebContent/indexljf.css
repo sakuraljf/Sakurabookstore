@@ -1,0 +1,119 @@
+@charset "UTF-8";
+#header{
+	position:absolute;
+	width:1280px;
+	height:40px;
+	top:0px;
+	left:0px;
+	background-color:silver;
+}
+#fenlei{
+	position:absolute;
+	top:40px;
+	left:0px;
+	width:300px;
+	height:570px;
+	background-color:rgb(255,250,232);
+}
+#lunbo{
+	position:absolute;
+	width:980px;
+	height:340px;
+	top:40px;
+	left:300px;
+	
+}
+#zhuye{
+	position:absolute;
+	width:980px;
+    height:230px;
+    top:380px;
+    left:300px;
+    background-color:rgb(255,255,255);
+}
+
+.point li{
+				display:inline-block;/*行内块 既能设置宽高 也能在一行显示*/
+				width:11px;
+				height:11px;
+				margin:0 5px;
+				background:#9f9f9f;
+				border-radius:50%;/*圆形*/
+				cursor:pointer;/*手型*/
+			}
+			
+.point li.active{
+				background-color:#ececec;
+			}
+#points{
+		 position: absolute;
+		 bottom:20px;
+		 left:460px;
+		 
+	 }
+ #father{
+		 position: relative;
+	 }
+.lei{
+	background-color:rgb(255,250,232);
+	width:300px;
+	height:40px;
+	border-bottom:1px silver dashed;
+	cursor:pointer;
+	
+}
+
+#id{
+	width:980px;
+    height:230px;
+}
+.hot_box
+{
+	position:relative;
+	float:left;
+	height:230px;
+	width:324px;
+	border:1px silver solid;
+}
+#view_books{
+	overflow:hidden;
+}
+#dec{
+	position:absolute;
+	top:0px;
+	left:194px;
+}
+
+#ming{
+	font-size:18px;
+	margin-bottom:10px;
+}
+#jia{
+	font-size:22px;
+	color:red;
+	margin-bottom:10px
+}
+#zuozhe{
+	color:silver;
+	margin-bottom:20px;
+}
+#tongyi{
+	color:rgb(18,173,169);
+	margin-bottom:20px;
+}
+.ljf{
+	font-size:20px;
+	color:rgb(18,173,169);
+	
+}
+#shous{
+	display:inline-block;
+	width:70%;
+	height:25px;
+	margin-right:20px;
+}
+#shoubtn{
+	display:inline-block;
+	width:20%;
+	height:25px;
+}
